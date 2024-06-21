@@ -18,9 +18,15 @@ function Games() {
     
     const displayGames = () => {
         if (games && games.length) {
-            return games.map(game => <div key={`key-${game.id}`} className="border p-5 border-solid hover:bg-fuchsia-500 hover:text-violet-50 rounded-md border-violet-900 mt-5 bg-slate-50">
-              <div>{game.title}</div>
-            </div>)
+            return games.map(game => (
+                <div key={`key-${game.id}`} className="border p-5 border-solid hover:bg-fuchsia-500 hover:text-violet-50 rounded-md border-violet-900 mt-5 bg-slate-50">
+                    <div>
+                        <a href={`http://localhost:8000/games/${game.id}`} className="text-blue-500 hover:underline">
+                            {game.title}
+                        </a>
+                    </div>
+                 </div>
+            ))
             }
         } 
     
